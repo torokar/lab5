@@ -1,10 +1,10 @@
 #pragma once
-#pragma once
 
 #include <iostream>
 #include <string>
 #include <stdexcept>
 #include <Windows.h>
+#include <limits>
 
 template<typename T>
 class List

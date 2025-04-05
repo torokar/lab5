@@ -1,3 +1,3 @@
 ﻿  grup_A.cpp
-D:\Clone\lab5\list.h(269,1): warning C4715: List<data<int> >::operator[]: значение возвращается не при всех путях выполнения
+D:\Clone\lab5\list.h(270,1): warning C4715: List<data<int> >::operator[]: значение возвращается не при всех путях выполнения
   grup_A.vcxproj -> D:\Clone\lab5\x64\Debug\grup_A.exe
