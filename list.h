@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include <Windows.h>
 
 template<typename T>
 class List
@@ -75,7 +76,7 @@ void List<T>::push_back(T data)
 template<typename T>
 void List<T>::push_front(T data)
 {
-	Node<T>* new newNode<T>(data, head);
+	Node<T>* newNode = new Node<T>(data, head);  
 	if (head == nullptr)
 	{
 		head = taill = newNode;
@@ -189,7 +190,7 @@ inline void List<T>::erase(int index)
 	Node<T>* current = nullptr;
 	if (index < 0 || index >= size)
 	{
-		throw index;
+		throw std::out_of_range("Неверный индекс для удаления!");
 	}
 	if (index == 0)
 	{
@@ -211,7 +212,7 @@ inline void List<T>::erase(int index)
 				current->prev->next = current->next;
 				if (current->next != nullptr)
 				{
-					current->next->prev = current->prev
+					current->next->prev = current->prev;
 				}
 				delete tmp;
 				size--;

@@ -23,5 +23,8 @@
     <ClInclude Include="list.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="save_data.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
