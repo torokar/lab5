@@ -20,6 +20,7 @@ public:
 	void clear();
 	void pop_back();
 	void insert(T data, int index);
+	void erase(int index);
 	T& operator[](const int index);
 
 private:
@@ -180,6 +181,69 @@ void List<T>::insert(T data, int index)
 		size++;
 
 	}
+}
+
+template<typename T>
+inline void List<T>::erase(int index)
+{
+	Node<T>* current = nullptr;
+	if (index < 0 || index >= size)
+	{
+		throw index;
+	}
+	if (index == 0)
+	{
+		pop_front();
+	}
+	else if (index == size - 1)
+	{
+		pop_back();
+	}
+	if (index >= size / 2)
+	{
+		current = taill;
+		int count = size - 1;
+		while (current != nullptr)
+		{
+			if (count == index)
+			{
+				Node<T>* tmp = current;
+				current->prev->next = current->next;
+				if (current->next != nullptr)
+				{
+					current->next->prev = current->prev
+				}
+				delete tmp;
+				size--;
+				return;
+			}
+			current = current->prev;
+			count--;
+		}
+	}
+	else
+	{
+		current = head;
+		int count = 0;
+		while (current != nullptr)
+		{
+			if (count == index)
+			{
+				Node<T>* tmp = current;
+				current->prev->next = current->next;
+				if (current->next != nullptr)
+				{
+					current->next->prev = current->prev;
+				}
+				delete tmp;
+				size--;
+				return;
+			}
+			current = current->next;
+			count++;
+		}
+	}
+
 }
 
 template<typename T>
