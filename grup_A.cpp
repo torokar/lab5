@@ -86,6 +86,9 @@ void openFile(std::string fileName, List<data<int>>& empList)
 	file.close();
 }
 
+
+
+
 int main()
 {
 	SetConsoleCP(1251);
@@ -106,6 +109,7 @@ int main()
 		std::cout << "2. Ввод данных из файла\n";
 		std::cout << "3. Удалить сотрудника по ID\n";
 		std::cout << "4. Вывести список сотрудников\n";
+		std::cout << "5. Средняя зарплата сотрудников, со стажем больше 12 лет\n";
 		std::cout << "0. Выход\n--> ";
 		std::cin >> choice;
 
@@ -154,33 +158,6 @@ int main()
 
 				empList.push_front(emp);
 			}
-
-			std::cout << "\n\n**Сотрудники со стажем больше 12 лет**\n\n";
-
-			bool found = false;
-			for (int i = 0; i < empList.GetSize(); i++)
-			{
-				if (empList[i].experience >= 12)
-				{
-					found = true;
-					std::cout << "\nID: " << empList[i].id
-						<< "\nИмя: " << empList[i].name
-						<< "\nФамилия: " << empList[i].second_name
-						<< "\nЗарплата: " << empList[i].salary
-						<< "\nСтаж работы: " << empList[i].experience << "\n";
-				}
-			}
-
-			if (!found)
-			{
-				std::cout << "Нет сотрудников со стажем >= 12 лет.\n";
-			}
-			else
-			{
-				double avg = cal_average_salary(empList, 12);
-				std::cout << "\nСредняя зарплата сотрудников со стажем >= 12 лет: " << avg << "\n";
-			}
-
 			break;
 		}
 
@@ -224,6 +201,35 @@ int main()
 			std::cout << "\nСредняя зарплата сотрудников со стажем >= 12 лет: " << avgSal << std::endl << std::endl;
 
 			break;
+		}
+		case 5:
+		{
+			std::cout << "\n\n**Сотрудники со стажем больше 12 лет**\n\n";
+
+			bool found = false;
+			for (int i = 0; i < empList.GetSize(); i++)
+			{
+				if (empList[i].experience >= 12)
+				{
+					found = true;
+					std::cout << "\nID: " << empList[i].id
+						<< "\nИмя: " << empList[i].name
+						<< "\nФамилия: " << empList[i].second_name
+						<< "\nЗарплата: " << empList[i].salary
+						<< "\nСтаж работы: " << empList[i].experience << "\n";
+				}
+			}
+
+			if (!found)
+			{
+				std::cout << "Нет сотрудников со стажем >= 12 лет.\n";
+			}
+			else
+			{
+				double avg = cal_average_salary(empList, 12);
+				std::cout << "\nСредняя зарплата сотрудников со стажем >= 12 лет: " << avg << "\n";
+			}
+
 		}
 
 		case 0:
