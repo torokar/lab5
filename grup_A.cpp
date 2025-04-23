@@ -1,36 +1,7 @@
 ﻿#include <iostream>
+#include <fstream>
 #include "list.h"
 #include "save_data.h"
-#include <fstream>
-
-//double cal_average_salary(List<data<int>>& empList, int exp)
-//{
-//	if (empList.GetSize() == 0)
-//	{
-//		std::cerr << "Список работников пуст!\n";
-//		return 0;
-//	}
-//
-//	double totalSal = 0;
-//	int count = 0;
-//
-//	for (int i = 0; i < empList.GetSize(); i++)
-//	{
-//		if (empList[i].experience >= exp)
-//		{
-//			totalSal += empList[i].salary;
-//			count++;
-//		}
-//	}
-//
-//	if (count == 0)
-//	{
-//		std::cout << "Нет работников со стажем >= " << exp << " лет.\n";
-//		return 0;
-//	}
-//
-//	return totalSal / count;
-//}
 
 void removePeopleId(List<data<int>>& empList, int ID)
 {

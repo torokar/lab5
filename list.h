@@ -2,9 +2,8 @@
 
 #include <iostream>
 #include <string>
-#include <stdexcept>
-#include <Windows.h>
 #include <limits>
+#include <Windows.h>
 
 template<typename T>
 class List
